@@ -4,10 +4,8 @@ orbs:
 workflows:
   deploy-ussd-php-app:
     jobs:
-      - deployment:
-          staging:
-            branches: 
+      - heroku/deploy-via-git:
+          filters:
+            branches:
               only: main
-              heroku:
-                appname: ussd-php-app
   
