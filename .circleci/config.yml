@@ -1,0 +1,13 @@
+version: 2.1
+orbs:
+  heroku: circleci/heroku@1.2.6
+workflows:
+  deploy-ussd-php-app:
+    jobs:
+      - deployment:
+          staging:
+            branches: 
+              only: main
+              heroku:
+                appname: ussd-php-app
+  
