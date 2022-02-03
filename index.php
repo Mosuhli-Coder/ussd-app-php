@@ -10,7 +10,6 @@ if ($text == ""){
     $response = "CON what would you want to check \n";
     $response .= "1. My Account No \n";
     $response .= "2. My Phone Number";
-    $response .= "3. My Phone Number";
 } else if ($text == "1"){
     // Business logic for the first response
     $response = "CON Choose account information you want to view \n";
