@@ -23,18 +23,16 @@ if ($text == ""){
     // This is the second level response where the use selected 1 in the first instance of
     $accountNumber = "ACC1001";
 
-    // This is a terminal request . Note how we start with END 
+    // This is a terminal request . Note how we start with END
     $response = "END Your account number is ".$accountNumber;
 } else if ($text == "1*2"){
     // This is a second level response where the use selected 2 in the first instance
     $balance = "KES 10 000";
 
-    // This is a terminal request. Note how we start with END 
+    // This is a terminal request. Note how we start with END
     $response = "END Your account number is ".$balance;
 }
 // echo the response to the API. The response depends on the statement that is fulfilled in each instance
-header('Content-type; text/plain');
+header('Content-type: text/plain');
 echo $response;
-
-
 ?>
