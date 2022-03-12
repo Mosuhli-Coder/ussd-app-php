@@ -1,4 +1,5 @@
 <?php
+include_once 'menu.php'; 
 // Reads the variables send via POST from AT gateway
 $sessionId = $_POST['sessionId'];
 $serviceCode = $_POST['serviceCode'];
@@ -25,23 +26,15 @@ if ($text == ""){
     $response .= "4. Bus Schedules\n";
 } else if ($text == "1*2*1"){
     // This is the second level response where the use selected 1 in the first instance of
-    $level = count($textArray);
-    if($level == 1){
-        echo "CON Hello CHABAYA Please Enter Parcel Pickup Point \n";
-        echo "CON Town/Village:";
-   } else if($level == 2){
-        echo "CON Hello CHABAYA Please Enter Parcel Pickup Point \n";
-        echo "CON Ward:";
-   }else if($level == 3){
-        echo "CON Hello CHABAYA Please Enter Parcel Pickup Point \n";
-        echo "CON Plot.NO:";
-   }
-    
-    $response .= "Town/Village";
-
-    // This is a terminal request . Note how we start with END
-    $response = "END Your account number is ".$accountNumber;
-} else if ($text == "1*2"){
+    $textArray = explode("*", $text);
+        switch($textArray[0]){
+            case 1: 
+                $menu->sendParcelMenu($textArray, $phoneNumber);
+            break;
+            default:
+                echo "END Invalid choice. Please try again";
+        }
+} else if ($text == "1*2*7"){
     // This is a second level response where the use selected 2 in the first instance
     $balance = "KES 10 000";
 

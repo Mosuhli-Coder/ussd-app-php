@@ -5,44 +5,18 @@
 
         function __construct(){}
 
-        public function mainMenuRegistered(){
-            //shows initial user menu for registered users
-            $response = "Automatic System Check (Check if the phone number exists in the system)\n";
-            $response .= "1. Phone number exists\n";
-            $response .= "2. Phone number does not exist\n";
-            return $response;
-        }
-
-        public function mainMenuUnRegistered(){
-            //shows initial user menu for unregistered users
-            $response = "CON Welcome to this app. Reply with\n";
-            $response .= "1. Register\n";
-            echo $response;
-        }
-
-        public function registerMenu($textArray, $phoneNumber){
+        public function sendParcelMenu($textArray, $phoneNumber){
           //building menu for user registration 
             $level = count($textArray);
            if($level == 1){
-                echo "CON Please enter your full name:";
+                echo "CON Hello CHABAYA Please Enter Parcel Pickup Point \n";
+                echo "CON Town/Village:";
            } else if($level == 2){
-                echo "CON Please enter set you PIN:";
+                echo "CON Hello CHABAYA Please Enter Parcel Pickup Point \n";
+                echo "CON Ward:";
            }else if($level == 3){
-                echo "CON Please re-enter your PIN:";
-           }else if($level == 4){
-                $name = $textArray[1];
-                $pin = $textArray[2];
-                $confirmPin = $textArray[3];
-                if($pin != $confirmPin){
-                    echo "END Your pins do not match. Please try again";
-                }else{
-                    //connect to DB and register a user. 
-                    echo "END You have been registered";
-                    $sms = new Sms();
-                    $message = "You have been registered";
-                    $sms->sendSms($message,$phoneNumber);
-                    
-                }
+                echo "CON Hello CHABAYA Please Enter Parcel Pickup Point \n";
+                echo "CON Plot.NO:";
            }
         }
 
