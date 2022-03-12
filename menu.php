@@ -34,13 +34,13 @@
             $level = count($textArray);
            if($level == 1){
                 echo "CON Hello CHABAYA Please Enter Parcel Pickup Point \n";
-                echo "CON Town/Village:";
+                echo "Town/Village:";
            } else if($level == 2){
                 echo "CON Hello CHABAYA Please Enter Parcel Pickup Point \n";
-                echo "CON Ward:";
+                echo "Ward:";
            }else if($level == 3){
                 echo "CON Hello CHABAYA Please Enter Parcel Pickup Point \n";
-                echo "CON Plot.NO:";
+                echo "Plot.NO:";
            }
         }
 

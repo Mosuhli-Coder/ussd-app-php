@@ -14,18 +14,15 @@ $isEnglish = false;
 
 if ($text == ""){
     echo "CON " . $menu->mainMenu();
-    $ismainMenu = true;
 } 
-else if ($ismainMenu == true && $text == "1"){
+else if ($text == "1"){
 
     $menu->numberExists();
-    $isnumberExists = true;
 } 
-else if ($isnumberExists = true && $text == "2"){
+else if ($text == "1*2"){
     $menu->English();
-    $isEnglish = true;
 } 
-else if ($isEnglish = true && $text == "1"){
+else if ($text == "1*2*1"){
     // This is the second level response where the use selected 1 in the first instance of
     $textArray = explode("*", $text);
         switch($textArray[0]){
