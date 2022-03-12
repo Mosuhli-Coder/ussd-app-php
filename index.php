@@ -9,7 +9,7 @@ $text        = $_POST["text"];
 $menu = new Menu();
 
 if ($text == ""){
-    $menu->mainMenu();
+    echo "CON " . $menu->mainMenu();
 } else if ($menu->mainMenu() && $text == "2"){
     $menu->numberExists();
 } else if ($menu->numberExists() && $text == "2"){
