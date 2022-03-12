@@ -6,6 +6,8 @@ $serviceCode = $_POST['serviceCode'];
 $phoneNumber = $_POST['phoneNumber'];
 $text = $_POST['text'];
 
+$menu = new Menu();
+
 if ($text == ""){
     // This is the first request> Note how we start the response with CON
     $response = "CON Automatic System Check (Check if the phone number exists in the system) \n";
