@@ -27,7 +27,7 @@ else if ($text == "1*2*1"){
     $textArray = explode("*", $text);
         switch($textArray[0]){
             case 1: 
-                $menu->sendParcelMenu($textArray, $phoneNumber);
+                echo "CON " . $menu->sendParcelMenu($textArray, $phoneNumber);
             break;
             default:
                 echo "END Invalid choice. Please try again";
