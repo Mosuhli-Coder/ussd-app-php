@@ -9,24 +9,12 @@ $text = $_POST['text'];
 $menu = new Menu();
 
 if ($text == ""){
-    // This is the first request> Note how we start the response with CON
-    $response = "CON Automatic System Check (Check if the phone number exists in the system) \n";
-    $response .= "1. Phone number exists \n";
-    $response .= "2. Phone number does not exist";
-} else if ($text == "1"){
-    // Business logic for the first response
-    $response = "CON Welcome To Tuma\n Rea go Amogela mo Tuma: \n";
-    $response .= "1. Setswana \n";
-    $response .= "2. English";
-} else if ($text == "1*2"){
-    // Business logic for the second response
-    // This is the terminal request> Note how we start the response with END
-    $response = "CON Welcome, Choose option: \n";
-    $response .= "1. Send Parcel\n";
-    $response .= "2. Track Parcel\n";
-    $response .= "3. Recieve Parcel\n";
-    $response .= "4. Bus Schedules\n";
-} else if ($text == "1*2*1"){
+    $menu->mainMenu();
+} else if ($menu->mainMenu() && $text == "2"){
+    $menu->numberExists();
+} else if ($menu->numberExists() && $text == "2"){
+    $menu->English();
+} else if ($menu->English() && $text == "1"){
     // This is the second level response where the use selected 1 in the first instance of
     $textArray = explode("*", $text);
         switch($textArray[0]){

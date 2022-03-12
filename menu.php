@@ -5,6 +5,30 @@
 
         function __construct(){}
 
+        public function mainMenu(){
+            //shows initial user menu for registered users
+            $response = "CON Automatic System Check (Check if the phone number exists in the system) \n";
+            $response .= "1. Phone number exists \n";
+            $response .= "2. Phone number does not exist";
+            return $response;
+        }
+        public function numberExists(){
+            //shows initial user menu for registered users
+            $response = "CON Welcome To Tuma\n Rea go Amogela mo Tuma: \n";
+            $response .= "1. Setswana \n";
+            $response .= "2. English";
+            return $response;
+        }
+        public function English(){
+            //shows initial user menu for registered users
+            $response = "CON Welcome, Choose option: \n";
+            $response .= "1. Send Parcel\n";
+            $response .= "2. Track Parcel\n";
+            $response .= "3. Recieve Parcel\n";
+            $response .= "4. Bus Schedules\n";
+            return $response;
+        }
+
         public function sendParcelMenu($textArray, $phoneNumber){
           //building menu for user registration 
             $level = count($textArray);
