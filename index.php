@@ -10,11 +10,15 @@ $menu = new Menu();
 
 if ($text == ""){
     echo "CON " . $menu->mainMenu();
-} else if ($menu->mainMenu() && $text == "2"){
+
+} 
+else if ($menu->mainMenu() && $text == "2"){
     $menu->numberExists();
-} else if ($menu->numberExists() && $text == "2"){
+} 
+else if ($menu->numberExists() && $text == "2"){
     $menu->English();
-} else if ($menu->English() && $text == "1"){
+} 
+else if ($menu->English() && $text == "1"){
     // This is the second level response where the use selected 1 in the first instance of
     $textArray = explode("*", $text);
         switch($textArray[0]){
