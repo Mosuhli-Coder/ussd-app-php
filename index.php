@@ -1,10 +1,10 @@
 <?php
 include_once 'menu.php'; 
-// Reads the variables send via POST from AT gateway
-$sessionId = $_POST['sessionId'];
-$serviceCode = $_POST['serviceCode'];
-$phoneNumber = $_POST['phoneNumber'];
-$text = $_POST['text'];
+// Read the data sent via POST from our AT API
+$sessionId   = $_POST["sessionId"];
+$serviceCode = $_POST["serviceCode"];
+$phoneNumber = $_POST["phoneNumber"];
+$text        = $_POST["text"];
 
 $menu = new Menu();
 
