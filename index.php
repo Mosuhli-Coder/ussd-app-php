@@ -17,10 +17,10 @@ if ($text == ""){
 } 
 else if ($text == "1"){
 
-    $menu->numberExists();
+    echo "CON " . $menu->numberExists();
 } 
 else if ($text == "1*2"){
-    $menu->English();
+    echo "CON " . $menu->English();
 } 
 else if ($text == "1*2*1"){
     // This is the second level response where the use selected 1 in the first instance of
