@@ -7,21 +7,37 @@ $text = $_POST['text'];
 
 if ($text == ""){
     // This is the first request> Note how we start the response with CON
-    $response = "CON what would you want to check \n";
-    $response .= "1. My Account No \n";
-    $response .= "2. My Phone Number";
+    $response = "CON Automatic System Check (Check if the phone number exists in the system) \n";
+    $response .= "1. Phone number exists \n";
+    $response .= "2. Phone number does not exist";
 } else if ($text == "1"){
     // Business logic for the first response
-    $response = "CON Choose account information you want to view \n";
-    $response .= "1. My Account Nnumber \n";
-    $response .= "2. Account Balance";
-} else if ($text == "2"){
+    $response = "CON Welcome To Tuma\n Rea go Amogela mo Tuma: \n";
+    $response .= "1. Setswana \n";
+    $response .= "2. English";
+} else if ($text == "1*2"){
     // Business logic for the second response
     // This is the terminal request> Note how we start the response with END
-    $response = "END Your phone number is ".$phoneNumber;
-} else if ($text == "1*1"){
+    $response = "CON Welcome, Choose option: \n";
+    $response .= "1. Send Parcel\n";
+    $response .= "2. Track Parcel\n";
+    $response .= "3. Recieve Parcel\n";
+    $response .= "4. Bus Schedules\n";
+} else if ($text == "1*2*1"){
     // This is the second level response where the use selected 1 in the first instance of
-    $accountNumber = "ACC1001";
+    $level = count($textArray);
+    if($level == 1){
+        echo "CON Hello CHABAYA Please Enter Parcel Pickup Point \n";
+        echo "CON Town/Village:";
+   } else if($level == 2){
+        echo "CON Hello CHABAYA Please Enter Parcel Pickup Point \n";
+        echo "CON Ward:";
+   }else if($level == 3){
+        echo "CON Hello CHABAYA Please Enter Parcel Pickup Point \n";
+        echo "CON Plot.NO:";
+   }
+    
+    $response .= "Town/Village";
 
     // This is a terminal request . Note how we start with END
     $response = "END Your account number is ".$accountNumber;
