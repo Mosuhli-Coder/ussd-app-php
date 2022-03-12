@@ -24,15 +24,6 @@ if ($text == ""){
             default:
                 echo "END Invalid choice. Please try again";
         }
-} else if ($text == "1*2*7"){
-    // This is a second level response where the use selected 2 in the first instance
-    $balance = "KES 10 000";
-
-    // This is a terminal request. Note how we start with END
-    $response = "END Your account number is ".$balance;
 }
-// echo the response to the API. The response depends on the statement that is fulfilled in each instance
-header('Content-type: text/plain');
-echo $response;
 
 ?>
