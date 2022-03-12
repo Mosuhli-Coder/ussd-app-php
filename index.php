@@ -32,7 +32,12 @@ if ($text == ""){
     // This is a terminal request. Note how we start with END
     $response = "END Your account number is ".$balance;
 }
+setTimeout(() => {
+    res.send($response);
+    res.end(); 
+  }, 5000);
 // echo the response to the API. The response depends on the statement that is fulfilled in each instance
 header('Content-type: text/plain');
 echo $response;
+
 ?>
