@@ -11,6 +11,7 @@ $menu = new Menu();
 $ismainMenu = false;
 $isnumberExists = false;
 $isEnglish = false;
+
 if ($text == ""){
     echo "CON " . $menu->mainMenu();
     $ismainMenu = true;
